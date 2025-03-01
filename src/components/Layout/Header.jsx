@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { AppBar, Box, Divider, Drawer, IconButton, Toolbar, Typography } from '@mui/material'
-import { Fastfood, Menu } from '@mui/icons-material'
-import { Link } from 'react-router-dom'
+import { Menu } from '@mui/icons-material'
+import { NavLink } from 'react-router-dom'
 import '../../styles/HeaderStyles.css'
+import LOGO from '../../images/logo.svg'
 const Header = () => {
     const [menustatus, setMenuStatus] = useState(false);
 
@@ -11,24 +12,23 @@ const Header = () => {
         setMenuStatus(!menustatus);
     }
 
-    //
+    //drawer's ItemList
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', width: '200px' }} >
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', width: '220px' }} >
             <Typography
                 color={"goldenrod"}
                 variant="h6"
                 component={"div"}
                 sx={{ flexGrow: 1, fontWeight: "bold", my: '24px' }}
             >
-                <Fastfood />
-                My Restaurant
+                <img src={LOGO} alt="logo" height={55} width={200} />
             </Typography>
             <Divider />
             <ul className='mobile-navigation'>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/menu">Menu</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
+                <li><NavLink activeClassName="active" to="/">Home</NavLink></li>
+                <li><NavLink to="/menu">Menu</NavLink></li>
+                <li><NavLink to="/about">About</NavLink></li>
+                <li><NavLink to="/contact">Contact</NavLink></li>
             </ul>
         </Box>
     );
@@ -54,15 +54,14 @@ const Header = () => {
                             component={"div"}
                             sx={{ flexGrow: 1, fontWeight: "bold" }}
                         >
-                            <Fastfood />
-                            My Restaurant
+                            <img src={LOGO} alt="logo" height={55} width={250} />
                         </Typography>
                         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                             <ul className='navigation-menu'>
-                                <li><Link to="/">Home</Link></li>
-                                <li><Link to="/menu">Menu</Link></li>
-                                <li><Link to="/about">About</Link></li>
-                                <li><Link to="/contact">Contact</Link></li>
+                                <li><NavLink activeClassName="active" to="/">Home</NavLink></li>
+                                <li><NavLink to="/menu">Menu</NavLink></li>
+                                <li><NavLink to="/about">About</NavLink></li>
+                                <li><NavLink to="/contact">Contact</NavLink></li>
                             </ul>
                         </Box>
                     </Toolbar>
@@ -76,7 +75,7 @@ const Header = () => {
                         {drawer}
                     </Drawer>
                 </Box>
-                <Box sx={{ p: 1 }}>
+                <Box>
                     <Toolbar />
                 </Box>
             </Box >
