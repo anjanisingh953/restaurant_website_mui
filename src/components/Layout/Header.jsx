@@ -29,6 +29,7 @@ const Header = () => {
                 <li><NavLink to="/menu">Menu</NavLink></li>
                 <li><NavLink to="/about">About</NavLink></li>
                 <li><NavLink to="/contact">Contact</NavLink></li>
+                <li><NavLink to="/calc">Calculator</NavLink></li>
             </ul>
         </Box>
     );
@@ -62,6 +63,7 @@ const Header = () => {
                                 <li><NavLink to="/menu">Menu</NavLink></li>
                                 <li><NavLink to="/about">About</NavLink></li>
                                 <li><NavLink to="/contact">Contact</NavLink></li>
+                                <li><NavLink to="/calc">Calculator</NavLink></li>
                             </ul>
                         </Box>
                     </Toolbar>

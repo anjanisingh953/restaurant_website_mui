@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Menu from './pages/Menu';
+import Calculator from './pages/Calculator';
 import PageNotFound from './pages/PageNotFound';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/menu' element={<Menu />} />
+          <Route path='/calc' element={<Calculator />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
